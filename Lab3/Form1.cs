@@ -24,6 +24,7 @@ namespace Lab3
         {
             count = new Counter16();
             setValuesOnForm();
+            MessageBox.Show("Создал счетчик!");
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -32,10 +33,11 @@ namespace Lab3
             {
                 count = new Counter16(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text));
                 setValuesOnForm();
+                MessageBox.Show("Создал счетчик!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -48,10 +50,11 @@ namespace Lab3
             {
                 count = new Counter16(min, min+def, val);
                 setValuesOnForm();
+                MessageBox.Show("Создал счетчик!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -64,7 +67,7 @@ namespace Lab3
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -77,7 +80,7 @@ namespace Lab3
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
