@@ -41,7 +41,10 @@ namespace Program12
             while (dataReader1.Read())
             {
                 listPlanets.Items.Add(dataReader1["Name"]);
-            }
+            } 
+
+            dataReader1.Close();
+            connection1.Close();
         }
     }
 }
