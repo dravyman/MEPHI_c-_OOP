@@ -15,6 +15,7 @@ namespace Program9
         Button button1;
         Bitmap image1;
         PictureBox pictureBox1;
+        PictureBox pictureBox2;
 
         public Form1()
         {
@@ -33,16 +34,24 @@ namespace Program9
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.ClientSize = new Size(300, 196);
 
+            pictureBox2 = new PictureBox();
+            pictureBox2.Location = new Point(pictureBox1.ClientSize.Width + 5, 0);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox2.ClientSize = new Size(300, 196);
+
             image1 = new Bitmap(@"../../images/Desert.jpg");
             pictureBox1.Image = (Image)image1;
+            pictureBox2.Image = (Image)image1;
 
             this.Controls.Add(pictureBox1);
+            this.Controls.Add(pictureBox2);
         }
 
         void button1_Click(object sender, EventArgs e)
         {
             image1.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            pictureBox1.Image = (Image)image1;
+            pictureBox2.Image = (Image)image1;
             this.Text = "Рисунок после поворота!";
         }
     }

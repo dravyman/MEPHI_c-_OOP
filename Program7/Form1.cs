@@ -18,6 +18,8 @@ namespace Program7
         RadioButton radioButton1, radioButton2;
         ListBox listBox1;
 
+        ProgressBar pr = new ProgressBar();
+
         public Form1()
         {
             this.Text = "Форма, включающая различные элементы управления!";
@@ -43,6 +45,7 @@ namespace Program7
             tn.Nodes.Add(new TreeNode("ToolBar"));
             tn.Nodes.Add(new TreeNode("PictureBox"));
             tn.Nodes.Add(new TreeNode("RichTextBox"));
+            tn.Nodes.Add(new TreeNode("ProgressBar"));
             treeView1.Nodes.Add(tn);
             this.Controls.Add(treeView1);
             // Добавляем панель для размещения остальных элементов управления
@@ -280,6 +283,15 @@ namespace Program7
                 new ToolBarButtonClickEventHandler(toolBar1_Click);
                 panel1.Controls.Add(toolBar1);
             }
+            else if (e.Node.Text == "ProgressBar")
+            {
+                pr.Location = new Point(40,10);
+                pr.Size = new Size(200,20);
+                pr.Value = 50;
+                pr.Maximum = 100;
+                pr.Minimum = 0;
+                panel1.Controls.Add(pr);
+            }
         }
         /* Обработчики событий для добавленных выше элементов управления */
         // Обработчик события, срабатывающий при щелчке мышью на метке
@@ -290,6 +302,7 @@ namespace Program7
         // Обработчик события, срабатывающий при нажатии кнопки
         void button1_Click(object sender, System.EventArgs e)
         {
+            pr.Increment(pr.Step);
             MessageBox.Show("Пора, наконец-то вы нажали меня!");
         }
         // Обработчик события, срабатывающий при установке или снятии флажка

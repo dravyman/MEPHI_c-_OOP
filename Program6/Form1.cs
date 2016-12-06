@@ -15,13 +15,13 @@ namespace Program6
 
         ListBox listBox1;
 
+        PictureBox pictureBox1 = new PictureBox();
         public Form1()
         {
             
             this.Size = new Size(400, 400);
 
             //PictureBox
-            PictureBox pictureBox1 = new PictureBox();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             Bitmap image1 = new Bitmap ("..//..//images//Desert.jpg");
             pictureBox1.ClientSize = new Size(this.Width, 150);
@@ -45,12 +45,19 @@ namespace Program6
             listBox1.Items.Add("Озеро");
             listBox1.Items.Add("Море");
             listBox1.Items.Add("Океан");
+            listBox1.Items.Add("картинка");
             listBox1.SelectedIndex = 2;
             this.Controls.Add(listBox1);
         }
 
         void button1_Click(object sender, System.EventArgs e)
         {
+            if (listBox1.SelectedItem.Equals("картинка")) 
+            {
+                Bitmap image1 = new Bitmap("..//..//images//Koala.jpg");
+                this.pictureBox1.Image = (Image)image1;
+            }
+                
             MessageBox.Show(this, "Вы выбрали " + listBox1.SelectedItem,"Уведомление", MessageBoxButtons.OK);
         }
     }
