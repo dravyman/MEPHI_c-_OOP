@@ -31,7 +31,7 @@ namespace Program12
             string sql = "SELECT * FROM Skill";
             string connectionString;
 
-            connectionString = "Data Source=DRAV-PC;Initial Catalog=HRR;User ID=drav-PC\\drav;Integrated Security=True";// + "Integrated Security = SSPI";
+            connectionString = "Data Source=DRAV-PC;Initial Catalog=HRR;Integrated Security=true";// + "Integrated Security = SSPI";
             SqlConnection connection1 = new SqlConnection(connectionString);
 
             connection1.Open();

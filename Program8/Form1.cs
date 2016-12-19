@@ -27,6 +27,8 @@ namespace Program8
             image1 = new Bitmap(@"../../images/Desert.jpg");
             pictureBox1.Image = (Image)image1;
             this.Controls.Add(pictureBox1);
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)
